@@ -4,6 +4,11 @@ var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var concatCss = require('gulp-concat-css');
 
+gulp.task('watch', function () {
+	gulp.watch('./resources/templates/*.html', ['default']);
+	gulp.watch('./resources/assets/js/*.js', ['default']);
+});
+
 gulp.task('default', function () {
 	// Fonts
 	gulp.src([

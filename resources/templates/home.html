@@ -17,6 +17,7 @@
         Users
     </div>
     <div class="panel-body">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add User</button>
         <table class="table">
             <thead>
                 <tr>
@@ -34,4 +35,43 @@
             </tbody>
         </table>
     </div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+     <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Add User</h4>
+        </div>
+        <div class="modal-body">
+           <form class="form-horizontal">
+
+              <div class="form-group">
+                 <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                 <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Fullname" ng-model="formData.name">
+                 </div>
+              </div>
+              <div class="form-group">
+                 <label for="inputEmail3" class="col-sm-3 control-label">Address</label>
+                 <div class="col-sm-9">
+                    <textarea class="form-control" placeholder="Full Address" ng-model="formData.address"></textarea>
+                 </div>
+              </div>
+              <div class="form-group">
+                 <label for="inputEmail3" class="col-sm-3 control-label">Member</label>
+                 <div class="col-sm-9">
+                    <input type="radio" ng-model="formData.member" name="member" ng-value="true" />
+                    <input type="radio" ng-model="formData.member" name="member" ng-value="false" />
+                 </div>
+              </div>
+           </form>
+        </div>
+        <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-primary" id="btn-save" ng-click="saveUser()" data-dismiss="modal">Save changes</button>
+        </div>
+     </div>
+  </div>
 </div>
